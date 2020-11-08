@@ -12,6 +12,11 @@ Simulates snowflake using Reiter's method, a cellular automata model of formatio
 The model is governed by Laplace's equation, and the diffusion equation. 
 The magnitude of these effects os governed by the aforementioned constants.
 
+3- basic_ray_tracer.py
+Real-time raytracing the snowflakes generated using the Monte Carlo simulation.
+This is entirely in python. 
+
+
 ## The Reiter method
 The second method we tried uses cellular automata to generate snowflakes. 
 This model is deterministic, which means it produces slightly less visually interesting.
