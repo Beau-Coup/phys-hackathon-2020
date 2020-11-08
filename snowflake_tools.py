@@ -7,7 +7,7 @@ def cost(grid, pt):
     if N==0:
         return 0
     if N==1:
-        return 0.1
+        return 0.01
     if N >10:
         return np.exp(-1 *N)
     
@@ -60,8 +60,10 @@ def generate_snowflake(sliver_bounds = [3,8], start_points=7, n_itter=5000, spaw
         quad = [np.real(full_grid * np.exp(1j*2*np.pi * ang / n_slivers)), np.imag(full_grid * np.exp(1j*2*np.pi * ang / n_slivers))]
         full_map.append(quad)
 
-    full_map = np.hstack(np.array(full_map))
-    return full_map.T
+    full_map = np.hstack(np.array(full_map)).T
+    args_list = np.argsort(full_map[:,0]**2 + full_map[:,1]**2)
+    full_map = full_map[args_list]
+    return full_map
 
 if __name__=="__main__":
     import matplotlib.pyplot as plt
