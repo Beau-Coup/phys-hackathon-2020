@@ -30,7 +30,7 @@ plot.set_background(0.4)
 # plot.load_mesh_obj("./mesh/prism", "hexa")
 
 
-fname = str(sys.argv[1])
+fname = "back.jpg"
 
 plot.set_float("tonemap_exposure", 0.9)
 plot.set_float("tonemap_gamma", 1.2)
