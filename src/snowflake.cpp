@@ -3,7 +3,19 @@
 
 using namespace std;
 
-bool isReceptive(vector<vector<float>> grid, int i, int j)
+bool isReceptive(vector<vector<float>> grid, int i, int j, vector<vector<int> > neighbours, int N) {
+    bool receptive = false;
+    for(vector<int> offset : neighbours) {
+        int x = (i + offset[0]);
+        int y = j + offset[0];
+        
+        if (x < 0 || x >= N || y < 0 || y >= N)
+            continue;
+        else if(grid[x][y])
+            return true;
+    }
+    return false;
+}
 int main() {
     int size = 256 + 2;
     
