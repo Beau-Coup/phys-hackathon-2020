@@ -1,0 +1,8 @@
+src/.vscode
+src/__pycache__
+src/cpp
+src/main.dSYM
+src/snowflake.dSYM
+src/flaky.csv
+src/main
+src/snowflake
