@@ -1,0 +1,24 @@
+// Apply a natural box layout model to all elements
+// but allowing components to change
+// http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+#container{
+    height:400px;
+}
+#background{
+    position: absolute;
+    top:0;
+    z-index: -1;
+}
+
+body{
+    background: #bde8f5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #eff8ff, #a1d6e7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #d6e8ff, #79c0d9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
