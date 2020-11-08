@@ -27,18 +27,15 @@ def cost(grid, pt):
     pt_y = np.imag(pt)
 
     _, res = np.polyfit(np.append(points_x, pt_x), np.append(points_y, pt_y), 1)
-    return min(1, 1 /np.abs(res) *(1/np.sqrt(N)) * 0.5)
+    return min(1, 1 /np.abs(res) *(1/np.sqrt(N)) * 0.8)
 
-niter = 5000
-angles = np.random.random_sample(niter)*2*np.pi / (n_slivers *2)
+niter = 10000
+angles = np.random.random_sample(100*niter)*2*np.pi / (n_slivers *2)
 
 grid = staring_grid.copy()
 
 #plt.scatter(np.real(grid), np.imag(grid))
-
 for i in range(niter):
-
-    
     far_point = np.mean(np.abs(grid)) + 1.8*np.std(np.abs(grid))
     variance = far_point/2
     mag = np.random.random_sample(2) 
