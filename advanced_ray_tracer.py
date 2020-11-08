@@ -6,7 +6,10 @@ from plotoptix.materials import m_dispersive_glass, m_diffuse, m_matt_glass, m_m
 from snowflake_tools import generate_snowflake
 import math
 
+# plt.ion()
 class params():
+    fps = 25
+    duration = 4
     n = 10
     a = 5
     s = a / n
@@ -57,7 +60,14 @@ optix = NpOptiX(
     width=width, height=height,
     start_now=True)
 
-optix.pause_compute()
+optix.encoder_create(fps=20, bitrate=4)
+optix.start()
+optix.encoder_start("lights.mp4", params.fps * params.duration)
 
+# for i in range(100):
+# optix.pause_compute()
 # optix.resume_compute()
-optix.close()
+# optix.save_image("hello.png")
+# optix.encoder_stop()
+
+# optix.close()
